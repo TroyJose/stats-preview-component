@@ -14,13 +14,13 @@ Users should be able to:
 
 #### Mobile
 
-![](./screenshot.jpg)
+![](./images/Mobile%20screenshot.png)
 
 #### Desktop
 
-![](./screenshot.jpg)
+![](./images/Desktop%20screenshot.png)
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
-- Live Site URL:(https://your-live-site-url.com)
+- Solution URL: (https://github.com/TroyJose/stats-preview-component)
+- Live Site URL:(https://stats-preview-component-troy.netlify.app/)
