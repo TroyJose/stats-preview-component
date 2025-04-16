@@ -1,0 +1,208 @@
+:root {
+    --bg-main: hsl(233, 47%, 7%);
+    --bg-card: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    
+    --text-primary: hsl(0, 0%, 100%);
+    --text-secondary: hsla(0, 0%, 100%, 0.75);
+    --text-muted: hsla(0, 0%, 100%, 0.6);
+
+    --fs-w1: 400;
+    --fs-w2: 700;
+  }
+
+  @layer reset {
+    *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        font: inherit; 
+      }
+      
+      html {
+        color-scheme: dark light;
+        hanging-punctuation: first last; /* Not supported in Chrome */
+      }
+      
+      body {
+        min-height: 100dvh;
+      }
+      
+      /* Media responsive */
+      img, picture, svg, video {
+        display: block;
+        max-width: 100%;
+        min-height: 100%;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+      }
+      
+      ol,
+      ul {
+       list-style: none;
+      }
+      
+      input, button, textarea, select {
+        font: inherit;
+      }
+      
+      p {
+        max-width: 75ch;
+        text-wrap: pretty; 
+      }
+      
+      @media (prefers-reduced-motion: no-preference) {
+        :has(:target) {
+          scroll-behavior: smooth;
+          scroll-padding-top: 3rem;
+        }
+      }
+  }
+
+  @layer base {
+
+    picture {
+     background-color: var(--accent);
+     
+    }
+    img {
+       aspect-ratio: 1;
+       object-fit: fill;
+       mix-blend-mode: multiply;
+    }
+    section {
+        padding-inline: 2rem ;
+        padding-block: 2em; 
+        min-height: 100%;
+        @media (min-width: 47.8125rem) {
+          padding-block: 4.375em;
+           margin-inline-start: 3em;
+        }
+    }
+    br {
+        @media (min-width: 376px) {
+            display: none;
+        }
+    }
+    h1 {
+        font-family: "Lexend Deca", sans-serif;
+        color: var(--text-primary);
+        font-size: clamp(1.5rem, 1.412rem + 0.3756vw, 1.75rem);
+        text-align: center;
+        font-weight: var(--fs-w2);
+        margin-block-end: 1em;
+        
+        @media (min-width: 47.8125rem) {
+            text-align: left;
+        }
+
+        span {
+            color: var(--accent);
+        }
+    }
+
+    h2 {
+      font-family:  "Inter", sans-serif;
+      color: var(--text-secondary);
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: var(--fs-w2);
+      @media (min-width: 47.8125rem) {
+        text-align: left;
+      
+      }
+    }
+    p {
+        font-family: "Inter", sans-serif;
+        color: var(--text-muted);
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        text-align: center;
+        margin-block-end: 3em;
+        @media (min-width: 47.8125rem) {
+          text-align: left;
+          max-width: 25em;
+          margin-block-end: 4.6875rem;
+        }
+    }
+
+    ul p {
+        color: var(--text-muted);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    ul > li:last-child  {
+        text-transform: uppercase;
+        
+    }
+    
+    footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+
+      }
+      @media (min-width: 47.8125rem) {
+        flex-direction: row;
+      }
+
+    }
+
+  }
+
+  @layer layout {
+
+    body {
+        display: grid;
+        place-items: center;
+        background-color: var(--bg-main);
+    }
+    .card {
+        max-inline-size: 70rem;
+        margin-inline: 2em;
+        margin-block: 2em;
+        background-color: var(--bg-card);
+        overflow: hidden;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        @media (min-width: 47.8125rem) {
+            display: flex;
+            flex-direction: row-reverse;
+           
+        }
+    }
+
+  
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3em;
+        
+        @media (min-width: 47.8125rem) {
+          justify-content: left;
+            flex-direction: row;
+            gap: 3em;
+         
+          }
+
+        }
+  }
